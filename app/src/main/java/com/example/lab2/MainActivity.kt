@@ -2,7 +2,6 @@ package com.example.lab2
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
 import com.google.android.material.snackbar.Snackbar
 
@@ -12,51 +11,47 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val button = findViewById<Button>(R.id.button)
-        button.setOnClickListener()
+
+        button_sum.setOnClickListener()
         {
 
-            val num1: Int = Integer.parseInt(plain_text_input.getText().toString())
-            val num2: Int = Integer.parseInt(plain_text_input2.getText().toString())
-            textView.text =  "${num1 + num2}"
-            val snack = Snackbar.make(it,"$num1 + $num2 =",Snackbar.LENGTH_LONG)
-            snack.show()
+            val num1: Int = Integer.parseInt(plain_text_input.text.toString())
+            val num2: Int = Integer.parseInt(plain_text_input2.text.toString())
+            val sum = num1 + num2
+            textView.text =  sum.toString()
+            Snackbar.make(it,"$num1 + $num2 =",Snackbar.LENGTH_LONG).show()
         }
 
-        val button5= findViewById<Button>(R.id.button5)
-        button5.setOnClickListener()
+        button_minus.setOnClickListener()
         {
 
-            val num1: Int = Integer.parseInt(plain_text_input.getText().toString())
-            val num2: Int = Integer.parseInt(plain_text_input2.getText().toString())
-            textView.text =  "${num1 - num2}"
-            val snack = Snackbar.make(it,"$num1 - $num2 =",Snackbar.LENGTH_LONG)
-            snack.show()
+            val num1: Int = Integer.parseInt(plain_text_input.text.toString())
+            val num2: Int = Integer.parseInt(plain_text_input2.text.toString())
+            val sum = num1 - num2
+            textView.text =  sum.toString()
+            Snackbar.make(it,"$num1 - $num2 =",Snackbar.LENGTH_LONG).show()
         }
 
-        val button6 = findViewById<Button>(R.id.button6)
-        button6.setOnClickListener()
+        button_multiply.setOnClickListener()
         {
 
-            val num1: Int = Integer.parseInt(plain_text_input.getText().toString())
-            val num2: Int = Integer.parseInt(plain_text_input2.getText().toString())
+            val num1: Int = Integer.parseInt(plain_text_input.text.toString())
+            val num2: Int = Integer.parseInt(plain_text_input2.text.toString())
             textView.text =  "${num1 * num2}"
-            val snack = Snackbar.make(it,"$num1 * $num2 =",Snackbar.LENGTH_LONG)
-            snack.show()
+            Snackbar.make(it,"$num1 * $num2 =",Snackbar.LENGTH_LONG).show()
         }
 
-        val button7 = findViewById<Button>(R.id.button7)
-        button7.setOnClickListener()
+
+        button_division.setOnClickListener()
         {
 
-            val num1: Int = Integer.parseInt(plain_text_input.getText().toString())
-            val num2: Int = Integer.parseInt(plain_text_input2.getText().toString())
+            val num1: Int = Integer.parseInt(plain_text_input.text.toString())
+            val num2: Int = Integer.parseInt(plain_text_input2.text.toString())
             if(num2 == 0)
                 textView.text = "infinity"
             else
                 textView.text = String.format("%.5f", num1/num2.toDouble())
-            val snack = Snackbar.make(it,"$num1 / $num2 =",Snackbar.LENGTH_LONG)
-            snack.show()
+            Snackbar.make(it,"$num1 / $num2 =",Snackbar.LENGTH_LONG).show()
         }
     }
 
